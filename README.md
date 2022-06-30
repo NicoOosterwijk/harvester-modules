@@ -23,7 +23,7 @@ module "harvester_image" {
 ## harvester_network
 ## harvester_ssh_key
 ```
-module "ssh-key" {
+module "harvester_ssh_key" {
   source     = "github.com/nicooosterwijk/harvester-modules/ssh-key"
   name       = "rancher"          // or whatever you like
   namespace  = "default"          // or the namespace you want in Harvester

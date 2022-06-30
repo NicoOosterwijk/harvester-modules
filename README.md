@@ -4,7 +4,7 @@ Usage:
 
 ## harvester_clusternetwork
 ```
-module "harvester_clusternetwork"{
+module "harvester_clusternetwork" {
   source               = "github.com/nicooosterwijk/harvester-modules/clusternetwork"
   name                 = "vlan"             // or whatever you like
   kubeconfig           = "harvester.yaml"    // the kubeconfig file for your harvester cluster

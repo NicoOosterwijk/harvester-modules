@@ -7,9 +7,9 @@ Usage:
 ```
 module "harvester_image" {
   source     = "github.com/nicooosterwijk/harvester-modules/images"
-  name       = "k3os"              // or whatever you want
-  namespace  = "harvester-public"  // the namespace in Harvester
-  kubeconfig = "harvester.yaml"    // your kubeconfig file
+  name       = "k3os"              // or whatever you like
+  namespace  = "harvester-public"  // the namespace in harvester
+  kubeconfig = "harvester.yaml"    // the kubeconfig file for your harvester cluster
 
   display_name = "k3os"            // display name
   source_type  = "download"        // this must be either "download" or "export-from-volume"
@@ -26,7 +26,7 @@ module "harvester_image" {
 module "harvester_ssh_key" {
   source     = "github.com/nicooosterwijk/harvester-modules/ssh-key"
   name       = "rancher"          // or whatever you like
-  namespace  = "default"          // or the namespace you want in Harvester
+  namespace  = "default"          // the namespace in harvester
 
   public_key = "ssh-rsa keyvalue" // your public key
   kubeconfig = "harvester.yaml"   // the kubeconfig file for your harvester cluster

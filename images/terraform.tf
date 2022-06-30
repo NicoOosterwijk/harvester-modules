@@ -9,6 +9,6 @@ terraform {
 
 provider "harvester" {
   # Configuration options
-  kubeconfig = "/Users/nicoo/.kube/harv01.yaml"
+  kubeconfig = var.kubeconfig
 }
 

@@ -1,4 +1,7 @@
 variable "name" {}
 variable "namespace" {}
-variable "public_key" {}
 variable "kubeconfig" {}
+
+variable "display_name" {}
+variable "source_type" {}
+variable "url" {}

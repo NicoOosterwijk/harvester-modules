@@ -1,5 +1,7 @@
 # harvester-modules
 
+Usage:
+
 ## harvester_clusternetwork
 ## harvester_image
 ```
@@ -20,7 +22,6 @@ module "harvester_image" {
 
 ## harvester_network
 ## harvester_ssh_key
-Usage:
 ```
 module "ssh-key" {
   source     = "github.com/nicooosterwijk/harvester-modules/ssh-key"

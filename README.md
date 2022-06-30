@@ -7,8 +7,8 @@ Usage:
 module "harvester_clusternetwork"{
   source               = "github.com/nicooosterwijk/harvester-modules/clusternetwork"
   name                 = "vlan"             // or whatever you like
-  enable               = true               // should be true
-  default_physical_nic = "harvester-mgmt"   // or a dedicated nic
+  kubeconfig           = "harvester.yaml"    // the kubeconfig file for your harvester cluster
+  default_nic          = "harvester-mgmt"   // or a dedicated nic
 }
 ```
 ## harvester_image

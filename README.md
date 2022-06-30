@@ -27,9 +27,9 @@ module "harvester_ssh_key" {
   source     = "github.com/nicooosterwijk/harvester-modules/ssh-key"
   name       = "rancher"          // or whatever you like
   namespace  = "default"          // the namespace in harvester
+  kubeconfig = "harvester.yaml"   // the kubeconfig file for your harvester cluster
 
   public_key = "ssh-rsa keyvalue" // your public key
-  kubeconfig = "harvester.yaml"   // the kubeconfig file for your harvester cluster
 }
 ```
 ## harvester_virtualmachine

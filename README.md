@@ -14,9 +14,9 @@ module "harvester_image" {
   url          = "https://github.com/rancher/k3os/releases/download/v0.20.6-k3s1r0/k3os-amd64.iso"
 }
 ```
-url is required when source_type = "download"
+***url*** is required when source_type = "download"
 
-pvc_namespace and pvc_name are required when source_type = "export-from-volume"
+***pvc_namespace*** and ***pvc_name*** are required when source_type = "export-from-volume"
 
 ## harvester_network
 ## harvester_ssh_key

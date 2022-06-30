@@ -2,7 +2,7 @@
 
 ## harvester_clusternetwork
 ## harvester_image
-
+```
 module "harvester_image" {
   source     = "github.com/nicooosterwijk/harvester-modules/images"
   name       = "k3os"              // or whatever you want
@@ -13,7 +13,7 @@ module "harvester_image" {
   source_type  = "download"        // this must be either "download" or "export-from-volume"
   url          = "https://github.com/rancher/k3os/releases/download/v0.20.6-k3s1r0/k3os-amd64.iso"
 }
-
+```
 url is required when source_type = "download"
 
 pvc_namespace and pvc_name are required when source_type = "export-from-volume"

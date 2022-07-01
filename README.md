@@ -30,6 +30,16 @@ module "harvester_image" {
 ***pvc_namespace*** and ***pvc_name*** are required when source_type = "export-from-volume"
 
 ## harvester_network
+```
+module "harvester_clusternetwork" {
+  source     = "github.com/nicooosterwijk/harvester-modules/network"
+  kubeconfig = "/Users/nicoo/.kube/harvester" // the kubeconfig file for your harvester cluster
+
+  namespace = "default"  // the namespace in harvester
+  name      = "vlan1"    // or whatever you like
+  vlan_id   = "1"        // the vlan id
+}
+```
 ## harvester_ssh_key
 ```
 module "harvester_ssh_key" {

@@ -11,4 +11,3 @@ provider "harvester" {
   # Configuration options
   kubeconfig = var.kubeconfig
 }
-

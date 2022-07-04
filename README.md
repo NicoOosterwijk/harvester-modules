@@ -52,4 +52,59 @@ module "harvester_ssh_key" {
 }
 ```
 ## harvester_virtualmachine
+```
+module "harvester_virtualmachine" {
+  source     = "github.com/nicooosterwijk/harvester-modules/virtualmachine"
+  kubeconfig = "harvester.yaml"   // the kubeconfig file for your harvester cluster
+
+  number_of_hosts = 1
+  prefix          = "test"        // your hosts will be named test-0 followed by the count.index
+  namespace       = "default"     // the namespace in harvester
+
+  cpu          = 2                // the resources used by the VM
+  memory       = "2Gi"
+  run_strategy = "RerunOnFailure"
+  machine_type = "q35"
+  nic_name    = "enp1s0"
+  nic_network = "vlan1"
+
+  ssh_user = "rancher"            // the ssh-user to logon with ssh
+
+  disk1 = [                       // root-disk parameters
+    {
+      name        = "rootdisk"
+      type        = "disk"
+      size        = "10Gi"
+      bus         = "virtio"
+      boot_order  = 1
+      image       = "default/ubuntu20"  // format is namespace/image_id
+      auto_delete = true
+    }
+  ]
+
+  extradisks = [                  // additional disks can be configured here
+    {
+      name        = "emptydisk"
+      type        = "disk"
+      size        = "20Gi"
+      bus         = "virtio"
+      boot_order  = 2
+      image       = ""
+      auto_delete = true
+      # },
+      # {
+      #   name        = "longhorn"
+      #   type        = "disk"
+      #   size        = "100Gi"
+      #   bus         = "virtio"
+      #   boot_order  = 3
+      #   image       = ""
+      #   auto_delete = true
+    }
+  ]
+  ssh_public_key = "sha-...."     // your ssh key for ssh_user
+  user_data = ""                  // user_data part for cloud_init
+  network_data = ""               // network_data part for cloud-init
+}
+```
 ## harvester_volume

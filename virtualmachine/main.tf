@@ -1,6 +1,6 @@
 resource "harvester_virtualmachine" "ubuntu20" {
   count     = var.number_of_hosts
-  name      = "${var.prefix}-${count.index +1}"
+  name      = "${var.prefix}-0${count.index +1}"
   namespace = var.namespace
 
   tags = {
@@ -43,11 +43,15 @@ resource "harvester_virtualmachine" "ubuntu20" {
   cpu          = var.cpu
   memory       = var.memory
   run_strategy = var.run_strategy
-  hostname     = "${var.prefix}-${count.index +1}"
+  hostname     = "${var.prefix}-0${count.index +1}"
   machine_type = var.machine_type
 
   cloudinit {
     user_data    = var.user_data
     network_data = var.network_data
   }
+}
+
+output "ip" {
+  value = "harvester_network.vlan1.ip_address"
 }

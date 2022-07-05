@@ -54,5 +54,5 @@ resource "harvester_virtualmachine" "ubuntu20" {
 
 
 output "name-0" {
-  value = "${harvester_virtualmachine.prefix}"
+  value = "${harvester_virtualmachine.ubuntu20[0].name}"
 }

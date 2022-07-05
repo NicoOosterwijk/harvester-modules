@@ -57,5 +57,5 @@ output "vm_name" {
   value = "${harvester_virtualmachine.ubuntu20[0].name}"
 }
 output "vm_ip" {
-  value = "${harvester_virtualmachine.ubuntu20[0].network_data}"
+  value = "${harvester_virtualmachine.ubuntu20[0].cloudinit}"
 }

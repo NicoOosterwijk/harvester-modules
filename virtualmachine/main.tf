@@ -66,3 +66,10 @@ output "vm2_name" {
 output "vm2_ip" {
   value = length(harvester_virtualmachine.ubuntu20) > 1 ? harvester_virtualmachine.ubuntu20[1].network_interface[0].ip_address : null
 }
+output "vm3_name" {
+  //value = "${harvester_virtualmachine.ubuntu20[1].name}"
+  value = length(harvester_virtualmachine.ubuntu20) > 2 ? harvester_virtualmachine.ubuntu20[2].name : null
+}
+output "vm3_ip" {
+  value = length(harvester_virtualmachine.ubuntu20) > 2 ? harvester_virtualmachine.ubuntu20[2].network_interface[0].ip_address : null
+}

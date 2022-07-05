@@ -53,16 +53,16 @@ resource "harvester_virtualmachine" "ubuntu20" {
 }
 
 
-output "vm_name-1" {
+output "vm1_name" {
   value = harvester_virtualmachine.ubuntu20[0].name
 }
-output "vm_ip-1" {
+output "vm1_ip" {
   value = harvester_virtualmachine.ubuntu20[0].network_interface[0].ip_address
 }
-output "vm_name-2" {
+output "vm2_name" {
   //value = "${harvester_virtualmachine.ubuntu20[1].name}"
   value = length(harvester_virtualmachine.ubuntu20) > 1 ? harvester_virtualmachine.ubuntu20[1].name : null
 }
-output "vm_ip-2" {
+output "vm2_ip" {
   value = length(harvester_virtualmachine.ubuntu20) > 1 ? harvester_virtualmachine.ubuntu20[1].network_interface[0].ip_address : null
 }

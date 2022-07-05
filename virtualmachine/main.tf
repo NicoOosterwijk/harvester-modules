@@ -1,6 +1,6 @@
 resource "harvester_virtualmachine" "ubuntu20" {
   count     = var.number_of_hosts
-  name      = "${var.prefix}-0${count.index +1}"
+  name      = "${var.prefix}-0${count.index + 1}"
   namespace = var.namespace
 
   tags = {
@@ -43,7 +43,7 @@ resource "harvester_virtualmachine" "ubuntu20" {
   cpu          = var.cpu
   memory       = var.memory
   run_strategy = var.run_strategy
-  hostname     = "${var.prefix}-0${count.index +1}"
+  hostname     = "${var.prefix}-0${count.index + 1}"
   machine_type = var.machine_type
 
   cloudinit {
@@ -52,6 +52,7 @@ resource "harvester_virtualmachine" "ubuntu20" {
   }
 }
 
+
 output "name-0" {
-  value = harvester_virtualmachine.ubuntu20[0].name
+  value = "${harvester_virtualmachine.prefix}"
 }

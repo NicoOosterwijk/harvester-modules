@@ -7,10 +7,6 @@ resource "harvester_virtualmachine" "ubuntu20" {
     ssh-user = var.ssh_user
   }
 
-  ssh_keys = [
-    harvester_ssh_key.rancher.id
-  ]
-
   network_interface {
     name         = var.nic_name
     network_name = var.nic_network

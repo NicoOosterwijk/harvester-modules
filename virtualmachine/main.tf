@@ -52,6 +52,6 @@ resource "harvester_virtualmachine" "ubuntu20" {
   }
 }
 
-output "ip" {
-  value = "harvester_network.vlan1.ip_address"
+output "ip_address" {
+  value = harvester_virtualmachine.ubuntu20.name
 }

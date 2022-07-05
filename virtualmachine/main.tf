@@ -53,6 +53,6 @@ resource "harvester_virtualmachine" "ubuntu20" {
 }
 
 
-output "name-0" {
+output "vm_name" {
   value = "${harvester_virtualmachine.ubuntu20[0].name}"
 }

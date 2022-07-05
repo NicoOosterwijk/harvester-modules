@@ -53,9 +53,15 @@ resource "harvester_virtualmachine" "ubuntu20" {
 }
 
 
-output "vm_name" {
+output "vm_name-1" {
   value = "${harvester_virtualmachine.ubuntu20[0].name}"
 }
-output "vm_ip" {
+output "vm_ip-1" {
   value = "${harvester_virtualmachine.ubuntu20[0].network_interface[*].ip_address}"
+}
+output "vm_name-2" {
+  value = "${harvester_virtualmachine.ubuntu20[1].name}"
+}
+output "vm_ip-2" {
+  value = "${harvester_virtualmachine.ubuntu20[1].network_interface[*].ip_address}"
 }

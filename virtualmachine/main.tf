@@ -52,6 +52,6 @@ resource "harvester_virtualmachine" "ubuntu20" {
   }
 }
 
-output "name" {
-  value = harvester_virtualmachine.ubuntu20[count.index].name
+output "name-0" {
+  value = harvester_virtualmachine.ubuntu20[0].name
 }

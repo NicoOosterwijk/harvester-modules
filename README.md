@@ -119,3 +119,4 @@ module "harvester_volume" {
   image     = "harvester-public/ubuntu20" // the image to be used
 }
 ```
+Leave image empty to create an empty volume

@@ -116,7 +116,7 @@ module "harvester_volume" {
   namespace = "default"                   // the namespace in Harvester
   name      = "ubuntu20-dev-image-disk"   // name the volume
   size      = "10Gi"                      // give it a size
-  image     = "harvester-public/ubuntu20" // the image to be used, leave it empty to create an empty volume
+  image     = "harvester-public/ubuntu20" // the image to be used, leave empty to create an empty volume
 }
 ```
 

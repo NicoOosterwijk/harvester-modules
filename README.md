@@ -111,11 +111,11 @@ module "harvester_virtualmachine" {
 ```
 module "harvester_volume" {
   source     = "github.com/nicooosterwijk/harvester-modules/volume"
-  kubeconfig = "/Users/nicoo/.kube/harvester"
+  kubeconfig = "harvester.yaml" // the kubeconfig file for your harvester cluster
 
-  namespace = "default"
-  name      = "ubuntu20-dev-image-disk"
-  size      = "10Gi"
-  image     = "harvester-public/ubuntu20"
+  namespace = "default"                   // the namespace in Harvester
+  name      = "ubuntu20-dev-image-disk"   // name the volume
+  size      = "10Gi"                      // give it a size
+  image     = "harvester-public/ubuntu20" // the image to be used
 }
 ```

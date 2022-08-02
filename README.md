@@ -108,3 +108,14 @@ module "harvester_virtualmachine" {
 }
 ```
 ## harvester_volume
+```
+module "harvester_volume" {
+  source     = "github.com/nicooosterwijk/harvester-modules/volume"
+  kubeconfig = "/Users/nicoo/.kube/harvester"
+
+  namespace = "default"
+  name      = "ubuntu20-dev-image-disk"
+  size      = "10Gi"
+  image     = "harvester-public/ubuntu20"
+}
+```
